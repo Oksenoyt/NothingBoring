@@ -17,7 +17,7 @@ struct GeneralView: View {
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
                         .opacity(0.9)
-                    RandomActivity(typeActivity: .general)
+                    RandomActivity()
                 }
                     .tabItem {
                         Image(systemName: "circle.hexagonpath.fill")
@@ -28,13 +28,12 @@ struct GeneralView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
-                    ParticipantView(typeActivity: .company)
+                    ParticipantView()
                 }
                     .tabItem {
                         HStack {
                             Image(systemName: "person.2")
                             Text("for one or company")
-                                .foregroundColor(.white)
                         }
                     }
                 ZStack {
@@ -42,14 +41,14 @@ struct GeneralView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
-                    TypeOfActivityView(typeActivity: .charity)
+                    TypeOfActivityView()
                 }
                     .tabItem {
                         Image(systemName: "hand.tap.fill")
                         Text("by type of activity")
                     }
+
         }
-            .tint(.white)
     }
 }
 

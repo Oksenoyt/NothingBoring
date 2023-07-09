@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainButtonView: View {
     let typeActivity: TypeActivity
+    
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         Button(action: action) {
@@ -28,13 +30,14 @@ struct MainButtonView: View {
     }
 
     private func action() {
-        ViewModel().fetchData(typeActivity: typeActivity)
+        print(typeActivity)
+        viewModel.fetchData(typeActivity: typeActivity)
     }
 
 }
 
 struct MainButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MainButtonView(typeActivity: .charity)
+        MainButtonView(typeActivity: .charity, viewModel: ViewModel())
     }
 }

@@ -25,10 +25,18 @@ enum TypeActivity: String {
 class ViewModel: ObservableObject {
     @Published var activity: Activity?
 
+    var participantTypeActivity: TypeActivity {
+        activity?.participants == 2 ? TypeActivity.company : TypeActivity.person
+    }
+    
     private let networkManager = NetworkManager.shared
+    private var urlParticipants: String {
+        activity?.participants == 1 ? TypeActivity.person.rawValue : TypeActivity.company.rawValue
+    }
 
     func fetchData(typeActivity: TypeActivity) {
         let url = "https://www.boredapi.com/api/" + typeActivity.rawValue
+        print(url)
         networkManager.fetchData(from: url) { result in
             switch result {
             case .success(let activity):

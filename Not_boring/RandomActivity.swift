@@ -8,28 +8,29 @@
 import SwiftUI
 
 struct RandomActivity: View {
-    let typeActivity: TypeActivity
+    private let typeActivity = TypeActivity .general
 
     @StateObject private var viewModel = ViewModel()
-    @State var activity = "are you bored? press tte button"
+//    @State var activity = "are you bored? press tte button"
 
     var body: some View {
         ZStack {
             VStack {
-                Text(typeActivity.rawValue)
-                Text(viewModel.activity?.activity ?? "1")
                 Spacer()
-                Text(activity)
+                Text(viewModel.activity?.activity ?? "")
                 Spacer()
-                MainButtonView(typeActivity: typeActivity)
+//                Text(activity)
+                Spacer()
+                MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
                 Spacer()
             }
         }
     }
 }
 
+
 struct PersonView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomActivity(typeActivity: .general)
+        RandomActivity()
     }
 }

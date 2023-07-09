@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct ParticipantView: View {
-    let typeActivity: TypeActivity
-    @State var activity = "are you bored? press tte button"
+    private let option = ["for one", "for company"]
+
+    private var typeActivity: TypeActivity {
+        viewModel.participantTypeActivity
+    }
+
+//    @State var activity = "are you bored? press tte button"
+    @StateObject private var viewModel = ViewModel()
 
     var body: some View {
         VStack {
-            Text(typeActivity.rawValue)
             Spacer()
-            Text(activity)
+            Text(viewModel.activity?.activity ?? "")
             Spacer()
-            MainButtonView(typeActivity: typeActivity)
+//            Text(activity)
+            Spacer()
+            PickerView(viewModel: viewModel, options: option)
+            MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
             Spacer()
         }
     }
@@ -25,6 +33,6 @@ struct ParticipantView: View {
 
 struct ParticipantView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipantView(typeActivity: .company)
+        ParticipantView()
     }
 }
