@@ -14,20 +14,81 @@ struct MainButtonView: View {
 
     var body: some View {
         Button(action: action) {
-            ZStack {
-                Image(systemName: "chevron.left")
-                       .resizable()
-                       .aspectRatio(contentMode: .fill)
-                       .frame(width: 100, height: 100)
-                   .cornerRadius(10)
-                Rectangle()
-                    .foregroundColor(.green)
-                    .opacity(0.5)
-                    .frame(width: 250, height: 110)
-                    .cornerRadius(30)
+//            VStack {
+//                Text("get activity")
+//                    .font(.system(size: 23,weight: .semibold, design: .rounded))
+//                    .frame(width: 200, height: 60)
+//                    .background(
+//                        ZStack {
+//                            Color("green2")
+//                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+//                                .foregroundColor(Color("lightGreen"))
+//                                .blur(radius: 5)
+//                                .offset(x: -8, y: -8)
+//                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+//                                .fill(
+//                                    LinearGradient(
+//                                        gradient:
+//                                            Gradient(colors: [Color("green2"), Color(.green)]),
+//                                        startPoint: .topLeading,
+//                                        endPoint: .bottomTrailing
+//                                    )
+////                                    GradientView()
+//                                )
+//                                .padding(3)
+//                        }
+//                    )
+//                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+//                    .shadow(color: Color("darckGreen"), radius: 10, x: 10, y: 20)
+//                    .shadow(color: Color("green3"), radius: 20, x: -20, y: -20)
+//                    .foregroundColor(Color .white)
+//            }
+            VStack {
+                Text("get activity")
+                    .font(.system(size: 26,weight: .semibold, design: .rounded))
+                    .frame(width: 130, height: 130)
+                    .background(
+                        ZStack {
+                            Color("green2")
+                            Circle()
+                                .foregroundColor(Color("lightGreen"))
+                                .blur(radius: 5)
+                                .offset(x: -8, y: -8)
+                            Circle()
+                                .fill(
+                                    LinearGradient(
+                                        gradient:
+                                            Gradient(colors: [Color("green2"), Color(.green)]),
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+//                                    GradientView()
+                                )
+                                .padding(3)
+                        }
+                    )
+                    .clipShape(Circle())
+                    .shadow(color: Color("darckGreen"), radius: 30, x: 20, y: 20)
+                    .shadow(color: Color("green3"), radius: 30, x: -20, y: -20)
+
             }
+//            .frame(width: 400, height: 500)
+//            .background(Image("fon")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .edgesIgnoringSafeArea(.all))
         }
     }
+
+//    struct GradientView: View {
+//        var body: some View {
+//            LinearGradient(
+//                gradient: Gradient(colors: [Color(.white), Color(.green)]),
+//                startPoint: .topLeading,
+//                endPoint: .bottomTrailing
+//            )
+//        }
+//    }
 
     private func action() {
         print(typeActivity)

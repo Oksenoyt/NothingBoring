@@ -14,19 +14,33 @@ struct ParticipantView: View {
         viewModel.participantTypeActivity
     }
 
-//    @State var activity = "are you bored? press tte button"
     @StateObject private var viewModel = ViewModel()
 
     var body: some View {
-        VStack {
-            Spacer()
-            Text(viewModel.activity?.activity ?? "")
-            Spacer()
-//            Text(activity)
-            Spacer()
-            PickerView(viewModel: viewModel, options: option)
-            MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
-            Spacer()
+        ZStack {
+            Image("fon")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.9)
+                .offset(y: 40)
+            VStack {
+                Spacer()
+                Text(viewModel.activity?.activity ?? "")
+                Spacer()
+                Spacer()
+                Spacer()
+                HStack {
+                    MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
+                    Spacer()
+                    PickerView(viewModel: viewModel, options: option)
+//                        .offset(y: -18)
+                }
+                .offset(y: 18)
+                .padding(25)
+                Spacer()
+                Spacer()
+            }
         }
     }
 }

@@ -15,21 +15,23 @@ struct PickerView: View {
     let options: [String]
 
     var body: some View {
-        VStack {
-            
             Picker("Select option", selection: $selectedOption) {
                 ForEach(options.indices, id: \.self) { index in
                     Text(options[index])
+                        .foregroundColor(Color("green"))
+                        .font(.system(size: 20,weight: .semibold, design: .rounded))
                 }
             }
             .pickerStyle(InlinePickerStyle())
             .onChange(of: selectedOption) { index in
-                var newValue: Int {
-                    options[index] == "for one" ? 1 : 2
-                }
-                viewModel.activity?.participants = newValue
-                print(newValue)
-            }
+                print(options[index])
+                viewModel.saveActivityType(item: options[index])
+//                var newValue: Int {
+//                    options[index] == "for one" ? 1 : 2
+//                }
+//                viewModel.activity?.participants = newValue
+//                print(newValue)
+
         }
     }
 }

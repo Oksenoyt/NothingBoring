@@ -28,6 +28,30 @@ class ViewModel: ObservableObject {
     var participantTypeActivity: TypeActivity {
         activity?.participants == 2 ? TypeActivity.company : TypeActivity.person
     }
+
+    var typeActivity: TypeActivity {
+        switch activity?.type {
+        case "education":
+            return TypeActivity.education
+        case "recreational":
+            return TypeActivity.recreational
+        case "social":
+            return TypeActivity.social
+        case "diy":
+            return TypeActivity.diy
+        case "charity":
+            return TypeActivity.charity
+        case "cooking":
+            return TypeActivity.cooking
+        case "relaxation":
+            return TypeActivity.relaxation
+        case "music":
+            return TypeActivity.music
+        default:
+            return TypeActivity.busywork
+        }
+    }
+
     
     private let networkManager = NetworkManager.shared
     private var urlParticipants: String {
@@ -47,4 +71,13 @@ class ViewModel: ObservableObject {
             }
         }
     }
+
+    func saveActivityType(item: String) {
+        if  item == "for company" {
+            print("qwe")
+            activity?.participants = 2
+        }
+        print("12",item)
+    }
+    
 }

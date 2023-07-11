@@ -11,17 +11,29 @@ struct RandomActivity: View {
     private let typeActivity = TypeActivity .general
 
     @StateObject private var viewModel = ViewModel()
-//    @State var activity = "are you bored? press tte button"
 
     var body: some View {
         ZStack {
+            Image("fon")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.9)
+                .offset(y: 40)
+
             VStack {
                 Spacer()
                 Text(viewModel.activity?.activity ?? "")
                 Spacer()
-//                Text(activity)
                 Spacer()
-                MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
+                Spacer()
+                HStack {
+                    MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
+                    Spacer()
+                }
+                .offset(y: 4)
+                .padding(25)
+                Spacer()
                 Spacer()
             }
         }
