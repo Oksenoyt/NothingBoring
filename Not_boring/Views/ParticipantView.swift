@@ -1,30 +1,24 @@
 //
-//  TypeOfActivityView.swift
+//  ParticipantView.swift
 //  Not_boring
 //
-//  Created by Oksenoyt on 05.07.2023.
+//  Created by Oksenoyt on 02.07.2023.
 //
 
 import SwiftUI
 
-struct TypeOfActivityView: View {
-    private let option =
-    [
-        "education",
-        "recreational",
-        "social",
-        "diy",
-        "charity",
-        "cooking",
-        "relaxation",
-        "music",
-        "busywork"
-    ]
+struct ParticipantView: View {
+    private let option = ["for one", "for company"]
 
     private var typeActivity: TypeActivity {
         viewModel.participantTypeActivity
     }
 
+    private var content: String {
+        viewModel.activity?.activity ?? ""
+    }
+
+    @State private var textOpacity = 1.0
     @StateObject private var viewModel = ViewModel()
 
     var body: some View {
@@ -35,12 +29,10 @@ struct TypeOfActivityView: View {
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.9)
                 .offset(y: 40)
-            
             VStack {
                 Spacer()
-                Text(viewModel.activity?.activity ?? "")
-                Spacer()
-                Spacer()
+                TextView(opacity: $textOpacity, content: content)
+                .padding()
                 Spacer()
                 HStack {
                     MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
@@ -48,8 +40,8 @@ struct TypeOfActivityView: View {
                     PickerView(viewModel: viewModel, options: option)
 //                        .offset(y: -18)
                 }
-                .padding(25)
                 .offset(y: 18)
+                .padding(25)
                 Spacer()
                 Spacer()
             }
@@ -57,8 +49,8 @@ struct TypeOfActivityView: View {
     }
 }
 
-struct TypeOfActivityView_Previews: PreviewProvider {
+struct ParticipantView_Previews: PreviewProvider {
     static var previews: some View {
-        TypeOfActivityView()
+        ParticipantView()
     }
 }

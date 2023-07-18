@@ -10,7 +10,7 @@ import Foundation
 
 struct Activity: Decodable {
     let activity: String
-    let type: String
+    var type: String
     var participants: Int
     let key: String
 }

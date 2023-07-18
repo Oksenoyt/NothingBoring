@@ -9,10 +9,14 @@ import SwiftUI
 
 struct RandomActivity: View {
     private let typeActivity = TypeActivity .general
+    private var content: String {
+        viewModel.activity?.activity ?? ""
+    }
 
-    @State private var rotationAngle: Angle = .degrees(0)
-
+    @State private var textOpacity = 1.0
     @StateObject private var viewModel = ViewModel()
+
+
 
     var body: some View {
         ZStack {
@@ -25,9 +29,9 @@ struct RandomActivity: View {
 
             VStack {
                 Spacer()
-                Text(viewModel.activity?.activity ?? "")
-                Spacer()
-                Spacer()
+                TextView(opacity: $textOpacity, content: content)
+                    .offset(y: -30)
+                .padding()
                 Spacer()
                 HStack {
                     MainButtonView(typeActivity: typeActivity, viewModel: viewModel)
@@ -43,27 +47,7 @@ struct RandomActivity: View {
                 Spacer()
                 Spacer()
                 Spacer()
-                HStack {
-                    Spacer()
-                    ZStack {
-                                Image("windmill")
-                                    .resizable()
-                                    .scaledToFit()
-                                Image("windmill2")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .rotationEffect(rotationAngle, anchor: .center)
-                                    .offset(x: -12 ,y: -132)
-                            }
-                            .onAppear {
-                                withAnimation(Animation.linear(duration: 5.0).repeatForever(autoreverses: false)) {
-                                    rotationAngle = .degrees(360)
-                                }
-                            }
-                            .frame(width: 250)
-                            .opacity(0.8)
-                            .offset(y: -13)
-                }
+                WindmillView()
                 Spacer()
                 Spacer()
             }

@@ -24,14 +24,7 @@ struct PickerView: View {
             }
             .pickerStyle(InlinePickerStyle())
             .onChange(of: selectedOption) { index in
-                print(options[index])
                 viewModel.saveActivityType(item: options[index])
-//                var newValue: Int {
-//                    options[index] == "for one" ? 1 : 2
-//                }
-//                viewModel.activity?.participants = newValue
-//                print(newValue)
-
         }
     }
 }
