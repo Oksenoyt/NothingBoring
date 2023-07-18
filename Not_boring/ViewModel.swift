@@ -28,8 +28,7 @@ class ViewModel: ObservableObject {
     @Published var activity: Activity?
 
     var participantTypeActivity: TypeActivity {
-        print("получено", activity?.participants)
-        return activity?.participants == 2 ? TypeActivity.company : TypeActivity.person
+        activity?.participants == 2 ? TypeActivity.company : TypeActivity.person
     }
 
     var typeActivity: TypeActivity {
@@ -70,20 +69,13 @@ class ViewModel: ObservableObject {
     }
 
     func saveActivityType(item: String) {
-        print("получил для сохранения in activity", item)
         switch item {
         case TypeActivity.company.rawValue:
-            print("было сохранено", activity?.participants)
             activity?.participants = 2
-            print("сохранено", activity?.participants)
         case TypeActivity.person.rawValue:
-            print("было сохранено", activity?.participants)
             activity?.participants = 1
-            print("сохранено", activity?.participants)
         default:
-            print("сохраняю в ", activity?.type, item)
             activity?.type = item
-            print("сохранено", activity?.type)
         }
     }
 

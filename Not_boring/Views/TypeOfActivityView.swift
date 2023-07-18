@@ -22,8 +22,7 @@ struct TypeOfActivityView: View {
     ]
 
     private var typeActivity: TypeActivity {
-        print("полученная typeActivity", viewModel.typeActivity)
-        return viewModel.typeActivity
+        viewModel.typeActivity
     }
 
     private var content: String {
