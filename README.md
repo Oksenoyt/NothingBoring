@@ -8,7 +8,7 @@ _____________________________________
 
 API: https://www.boredapi.com/ 
 
-uml diagram of one part of the application:
+UML diagram of a single screen in the application:
 <img width="715" alt="image" src="https://github.com/Oksenoyt/NothingBoring/assets/107453751/c5da67c5-a38c-4f9b-a70d-794ad29bc943">
 
 
