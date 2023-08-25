@@ -46,16 +46,6 @@ struct MainButtonView: View {
         }
     }
 
-//    struct GradientView: View {
-//        var body: some View {
-//            LinearGradient(
-//                gradient: Gradient(colors: [Color(.white), Color(.green)]),
-//                startPoint: .topLeading,
-//                endPoint: .bottomTrailing
-//            )
-//        }
-//    }
-
     private func action() {
         print(typeActivity)
         viewModel.fetchData(typeActivity: typeActivity)

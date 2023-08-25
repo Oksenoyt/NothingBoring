@@ -123,12 +123,12 @@
 		42F531642A5220B6002FBFAB /* Not_boring */ = {
 			isa = PBXGroup;
 			children = (
-				427EDFBB2A991C3D00BE4123 /* Helpers */,
 				42F531652A5220B6002FBFAB /* Not_boringApp.swift */,
 				42BC40F32A5F63A500876B87 /* Views */,
 				423439152A54F5CD008970F4 /* ViewModel.swift */,
 				42D4218C2A670EE600D3523A /* Services */,
 				42D4218D2A670F5800D3523A /* Models */,
+				427EDFBB2A991C3D00BE4123 /* Helpers */,
 				42F531692A5220B8002FBFAB /* Assets.xcassets */,
 				42F5316B2A5220B8002FBFAB /* Preview Content */,
 			);
