@@ -10,6 +10,8 @@
 		423439162A54F5CD008970F4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423439152A54F5CD008970F4 /* ViewModel.swift */; };
 		423439182A561DDC008970F4 /* TypeOfActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423439172A561DDC008970F4 /* TypeOfActivityView.swift */; };
 		4234391A2A59FE4B008970F4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423439192A59FE4B008970F4 /* PickerView.swift */; };
+		427EDFBD2A991C9600BE4123 /* Color + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427EDFBC2A991C9600BE4123 /* Color + Hex.swift */; };
+		427EDFBF2A991E8600BE4123 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427EDFBE2A991E8600BE4123 /* Resources.swift */; };
 		42BC40F02A5F461300876B87 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC40EF2A5F461300876B87 /* TextView.swift */; };
 		42BC40F22A5F62CC00876B87 /* WindmillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC40F12A5F62CC00876B87 /* WindmillView.swift */; };
 		42BCBADB2A53A19600243A84 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BCBADA2A53A19600243A84 /* NetworkManager.swift */; };
@@ -27,6 +29,8 @@
 		423439152A54F5CD008970F4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		423439172A561DDC008970F4 /* TypeOfActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfActivityView.swift; sourceTree = "<group>"; };
 		423439192A59FE4B008970F4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		427EDFBC2A991C9600BE4123 /* Color + Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Hex.swift"; sourceTree = "<group>"; };
+		427EDFBE2A991E8600BE4123 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		42BC40EF2A5F461300876B87 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		42BC40F12A5F62CC00876B87 /* WindmillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindmillView.swift; sourceTree = "<group>"; };
 		42BCBADA2A53A19600243A84 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -52,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		427EDFBB2A991C3D00BE4123 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				427EDFC02A991E8D00BE4123 /* Extension */,
+				427EDFBE2A991E8600BE4123 /* Resources.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		427EDFC02A991E8D00BE4123 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				427EDFBC2A991C9600BE4123 /* Color + Hex.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		42BC40F32A5F63A500876B87 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +123,7 @@
 		42F531642A5220B6002FBFAB /* Not_boring */ = {
 			isa = PBXGroup;
 			children = (
+				427EDFBB2A991C3D00BE4123 /* Helpers */,
 				42F531652A5220B6002FBFAB /* Not_boringApp.swift */,
 				42BC40F32A5F63A500876B87 /* Views */,
 				423439152A54F5CD008970F4 /* ViewModel.swift */,
@@ -191,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427EDFBD2A991C9600BE4123 /* Color + Hex.swift in Sources */,
 				42BCBADB2A53A19600243A84 /* NetworkManager.swift in Sources */,
 				42BC40F02A5F461300876B87 /* TextView.swift in Sources */,
 				42F531742A5228B8002FBFAB /* ParticipantView.swift in Sources */,
@@ -199,6 +222,7 @@
 				42F531762A522B31002FBFAB /* RandomActivity.swift in Sources */,
 				423439182A561DDC008970F4 /* TypeOfActivityView.swift in Sources */,
 				42F531782A5232AB002FBFAB /* MainButtonView.swift in Sources */,
+				427EDFBF2A991E8600BE4123 /* Resources.swift in Sources */,
 				42F531682A5220B6002FBFAB /* GeneralView.swift in Sources */,
 				423439162A54F5CD008970F4 /* ViewModel.swift in Sources */,
 				4234391A2A59FE4B008970F4 /* PickerView.swift in Sources */,

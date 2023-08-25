@@ -20,15 +20,15 @@ struct MainButtonView: View {
                     .frame(width: 130, height: 130)
                     .background(
                         ZStack {
-                            Color("green2")
+                            Circle().fill(CustomColor.conceptual)
                             Circle()
-                                .foregroundColor(Color("lightGreen"))
+                                .foregroundColor(CustomColor.lightGreen)
                                 .blur(radius: 5)
                                 .offset(x: -8, y: -8)
                             Circle()
                                 .fill(
                                     RadialGradient(
-                                        gradient: Gradient(colors: [.green, Color("green2")]),
+                                        gradient: Gradient(colors: [.green, CustomColor.conceptual]),
                                         center: .bottomTrailing,
                                                         startRadius: 0,
                                                         endRadius: 110
@@ -39,8 +39,8 @@ struct MainButtonView: View {
                         }
                     )
                     .clipShape(Circle())
-                    .shadow(color: Color("darckGreen"), radius: 30, x: 20, y: 20)
-                    .shadow(color: Color("green3"), radius: 30, x: -20, y: -20)
+                    .shadow(color: CustomColor.darckGreen, radius: 30, x: 20, y: 20)
+                    .shadow(color: CustomColor.lightGreen, radius: 30, x: -20, y: -20)
 
             }
         }

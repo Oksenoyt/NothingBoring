@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+
+
 struct GeneralView: View {
 
     var body: some View {
@@ -33,7 +36,7 @@ struct GeneralView: View {
                     }
 
         }
-            .tint(Color("lightGreen"))
+            .tint(CustomColor.lightGreen)
     }
 }
 

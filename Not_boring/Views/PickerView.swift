@@ -18,7 +18,7 @@ struct PickerView: View {
             Picker("Select option", selection: $selectedOption) {
                 ForEach(options.indices, id: \.self) { index in
                     Text(options[index])
-                        .foregroundColor(Color("green"))
+                        .foregroundColor(CustomColor.brazilianGreen)
                         .font(.system(size: 20,weight: .semibold, design: .rounded))
                 }
             }
